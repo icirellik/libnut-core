@@ -54,14 +54,14 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  dispatch:
-    needs:
-      - deploy
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Dispatch snapshot release
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.SNAPSHOT_DISPATCH_TOKEN }}
-          repository: nut-tree/nut.js
-          event-type: snapshot-release
+  # dispatch:
+  #   needs:
+  #     - deploy
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Dispatch snapshot release
+  #       uses: peter-evans/repository-dispatch@v1
+  #       with:
+  #         token: ${{ secrets.SNAPSHOT_DISPATCH_TOKEN }}
+  #         repository: nut-tree/nut.js
+  #         event-type: snapshot-release
